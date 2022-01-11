@@ -80,6 +80,7 @@ public class ReposActivity extends AppCompatActivity {
                 userName.setText(userID);
                 followers.setText(numFollowers);
                 following.setText(numFollowing);
+                circularProgress.setVisibility(View.GONE);
             }
             @Override
             public void onFailure(Call<User> call, Throwable t) {
