@@ -57,8 +57,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         }
 
         void bindData(final Repos repo){
-            repoName.setText(repo.getNameRepo());
-            codeLanguage.setText(repo.getCodeLanguage());
+            repoName.setText(repo.getFull_name());
+            codeLanguage.setText(repo.getLanguage());
         }
 
     }

@@ -1,6 +1,8 @@
 package edu.upc.dsa;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -54,8 +56,11 @@ public class ReposActivity extends AppCompatActivity {
 
         apiInterface = retrofit.create(ApiInterface.class);
 
-        getUserByID(userName.toString());
-        getAllRepos(userName.toString());
+        SharedPreferences sharedPrefer = getSharedPreferences("userName", Context.MODE_PRIVATE);
+        String userNamePass = sharedPrefer.getString("User", null);
+
+        getUserByID(userNamePass);
+        getAllRepos(userNamePass);
     }
 
     public void getUserByID (String userID){
